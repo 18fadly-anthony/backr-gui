@@ -1,6 +1,6 @@
 from gooey import Gooey, GooeyParser
 
-@Gooey(target="backr.py -w")
+@Gooey(target="backr.py")
 
 def main():
     parser = GooeyParser()
@@ -26,6 +26,11 @@ def main():
     group.add_argument('-c',
                        metavar="Use compression",
                        widget='BlockCheckbox'
+    )
+    backr.add_argument('-e',
+                       metavar="Comment",
+                       help="set comment to '-w' for no comment",
+                       default="-w"
     )
 
     parser.parse_args()
