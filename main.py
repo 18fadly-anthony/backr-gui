@@ -15,17 +15,16 @@ def main():
                        widget="DirChooser",
                        required=True
     )
-    backr.add_mutually_exclusive_group(
-        gooey_options={
-            backr.add_argument('-n',
-                               metavar="Do not use compression",
-                               widget='BlockCheckbox'
-            ),
-            backr.add_argument('-c',
-                               metavar="Use compression",
-                               widget='BlockCheckbox'
-            )
-        }
+    group = backr.add_mutually_exclusive_group(
+        required=True
+    )
+    group.add_argument('-n',
+                       metavar="Do not use compression",
+                       widget='BlockCheckbox'
+    ),
+    group.add_argument('-c',
+                       metavar="Use compression",
+                       widget='BlockCheckbox'
     )
 
     parser.parse_args()
