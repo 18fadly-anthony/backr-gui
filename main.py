@@ -12,6 +12,7 @@ def main():
     )
     backr.add_argument('-l',
                        metavar="Choose folder to store backup",
+                       help="this option will be ignored if .backr-location exists",
                        widget="DirChooser",
                        required=True
     )
